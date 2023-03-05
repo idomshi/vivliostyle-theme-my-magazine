@@ -1,2 +1,5 @@
 node_modules/
 book/
+*.pdf
+example/*.html
+publication.json
