@@ -1,0 +1,45 @@
+{
+  "name": "vivliostyle-theme-my-magazine",
+  "description": "Theme for magazine",
+  "version": "0.1.0",
+  "author": "idomshi",
+  "scripts": {
+    "build": "run-s build:scss build:vivliostyle build:vivliostyle-pdf",
+    "build:scss": "sass scss:.",
+    "build:vivliostyle": "vivliostyle build",
+    "build:vivliostyle-pdf": "vivliostyle build --theme theme_pdf.css -o book.pdf",
+    "dev": "run-p preview watch:scss",
+    "dev-pdf": "run-p preview-pdf watch:scss",
+    "preview": "vivliostyle preview",
+    "preview-pdf": "vivliostyle preview --theme theme_pdf.css",
+    "validate": "vivliostyle-theme-scripts validate",
+    "watch:scss": "sass --watch scss:."
+  },
+  "devDependencies": {
+    "@vivliostyle/cli": "latest",
+    "sass": "^1.32.8",
+    "npm-run-all": "^4.1.5",
+    "vivliostyle-theme-scripts": "^0.3.1"
+  },
+  "files": [
+    "*.css",
+    "*.css.map",
+    "scss",
+    "example",
+    "vivliostyle.config.js"
+  ],
+  "keywords": [
+    "vivliostyle",
+    "vivliostyle-theme"
+  ],
+  "license": "MIT",
+  "vivliostyle": {
+    "theme": {
+      "name": "Vivliostyle Theme My Magazine",
+      "author": "idomshi",
+      "style": "./theme_print.css",
+      "category": "magazine",
+      "topics": []
+    }
+  }
+}

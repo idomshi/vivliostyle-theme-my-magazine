@@ -1,0 +1,48 @@
+$margin-top: 15mm;
+$margin-left: 15mm;
+$margin-right: 15mm;
+$margin-botom: 15mm;
+$bleed-width: 3mm;
+$page-width: 182mm;
+$page-height: 257mm;
+$center-wrap: 3mm;
+
+@page {
+  /* B5サイズは「182mm × 257mm」 */
+  size: JIS-B5;
+  margin-top: $margin-top;
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  margin-bottom: $margin-botom;
+}
+
+@page :left {
+  @top-left {
+    content: none;
+  }
+
+  @bottom-left-corner {
+    content: counter(page);
+    text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF,
+      -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+      0px 1px 0 #FFF, 0-1px 0 #FFF,
+      -1px 0 0 #FFF, 1px 0 0 #FFF;
+  }
+}
+
+@page :right {
+  @top-right {
+    content: none;
+  }
+
+  @bottom-right-corner {
+    content: counter(page);
+    text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF,
+      -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+      0px 1px 0 #FFF, 0-1px 0 #FFF,
+      -1px 0 0 #FFF, 1px 0 0 #FFF;
+  }
+}
+
+@import '_spread_01';
+@import '_text_01';

@@ -1,0 +1,38 @@
+@page spread_01 {}
+
+.spread_01 {
+  page: spread_01;
+
+  body {
+    break-before: left;
+  }
+
+  img {
+    z-index: -10;
+    position: absolute;
+    display: block;
+    object-fit: cover;
+    object-position: left bottom;
+  }
+
+  img:nth-child(1) {
+    top: -($margin-top + $bleed-width);
+    left: -($margin-left + $bleed-width);
+    width: $page-width + 2 * $bleed-width;
+    height: $page-height + 2 * $bleed-width;
+    max-width: $page-width + 2 * $bleed-width;
+    max-height: $page-height + 2 * $bleed-width;
+  }
+
+  img:nth-child(2) {
+    top: -($margin-top + $bleed-width);
+    left: -($bleed-width + $page-width + $margin-left - 2 * $center-wrap);
+    width: 2 * ($bleed-width + $page-width - $center-wrap);
+    height: $page-height + 2 * $bleed-width;
+    max-width: 2 * ($bleed-width + $page-width - $center-wrap);
+    max-height: $page-height + 2 * $bleed-width;
+    break-before: right;
+  }
+}
+
+@import '_text_01';

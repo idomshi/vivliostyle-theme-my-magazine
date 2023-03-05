@@ -1,0 +1,24 @@
+$title-height: 9rem;
+
+@page text_01:nth(1) {
+  padding-top: $title-height;
+}
+
+.text_01 {
+  page: text_01;
+
+  .text_01 {
+    columns: 2;
+    column-gap: 8mm;
+
+    & .text-header {
+      position: absolute;
+      top: -$title-height;
+      border-top: 2pt #333 solid;
+      border-bottom: 2pt #333 solid;
+      column-span: all;
+      max-width: $page-width - $margin-left - $margin-right;
+      width: $page-width - $margin-left - $margin-right;
+    }
+  }
+}

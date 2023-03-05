@@ -1,0 +1,24 @@
+@page spread_01 {
+  size: ($page-width - $center-wrap) $page-height;
+
+  /* show bleeds */
+  marks: none;
+  bleed: 0;
+}
+
+@page spread_01:right {
+  @top-right {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+}
+
+.spread_01 {
+  page: spread_01;
+
+  img:nth-child(2) {
+    left: -($bleed-width + $page-width + $margin-left - $center-wrap);
+  }
+}

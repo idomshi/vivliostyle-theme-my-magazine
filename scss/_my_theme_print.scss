@@ -1,0 +1,17 @@
+@page {
+  /* show bleeds */
+  marks: crop cross;
+  bleed: $bleed-width;
+  crop-offset: $bleed-width;
+
+  /* if you open the publication on Vivliostyle Viewer, this message will be shown */
+  @top-left {
+    content: none;
+  }
+}
+
+@page :right {
+  @top-left {
+    content: none;
+  }
+}
