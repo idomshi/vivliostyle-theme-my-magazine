@@ -12,27 +12,33 @@
     position: absolute;
     display: block;
     object-fit: cover;
-    object-position: left bottom;
+    transform: matrix(2, 0, 0, 2, 0, 0);
   }
 
-  img:nth-child(1) {
-    top: -($margin-top + $bleed-width);
-    left: -($margin-left + $bleed-width);
-    width: $page-width + 2 * $bleed-width;
-    height: $page-height + 2 * $bleed-width;
-    max-width: $page-width + 2 * $bleed-width;
-    max-height: $page-height + 2 * $bleed-width;
+
+  p:has(img):nth-child(1) {
+    img:nth-child(1) {
+      top: ($page-height - $margin-top - $margin-botom - ($page-height + 2 * $bleed-width) / 2) / 2;
+      left: ($page-width - $margin-left - $margin-right - ($page-width + 2 * $bleed-width) / 2) / 2;
+      width: ($page-width + 2 * $bleed-width) / 2;
+      height: ($page-height + 2 * $bleed-width) / 2;
+      max-width: ($page-width + 2 * $bleed-width) / 2;
+      max-height: ($page-height + 2 * $bleed-width) / 2;
+      object-position: left bottom;
+    }
   }
 
-  img:nth-child(2) {
-    top: -($margin-top + $bleed-width);
-    left: -($bleed-width + $page-width + $margin-left - 2 * $center-wrap);
-    width: 2 * ($bleed-width + $page-width - $center-wrap);
-    height: $page-height + 2 * $bleed-width;
-    max-width: 2 * ($bleed-width + $page-width - $center-wrap);
-    max-height: $page-height + 2 * $bleed-width;
+  p:has(img):nth-child(2) {
     break-before: right;
+
+    img {
+      top: ($page-height - $margin-top - $margin-botom - ($page-height + 2 * $bleed-width) / 2) / 2;
+      left: ($page-width - $margin-left - $margin-right - ($page-width + 2 * $bleed-width) / 2) / 2;
+      width: ($page-width + 2 * $bleed-width) / 2;
+      height: ($page-height + 2 * $bleed-width) / 2;
+      max-width: ($page-width + 2 * $bleed-width) / 2;
+      max-height: ($page-height + 2 * $bleed-width) / 2;
+      object-position: -(($page-width + 2 * $bleed-width) / 2 - $bleed-width - $center-wrap) bottom;
+    }
   }
 }
-
-@import '_text_01';
