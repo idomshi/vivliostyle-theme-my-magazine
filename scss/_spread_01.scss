@@ -2,6 +2,9 @@
 
 .spread_01 {
   page: spread_01;
+  background-color: rgba(255,255,255,0.4);
+  width: max-content;
+  max-width: max-content;
 
   body {
     break-before: left;
@@ -12,7 +15,7 @@
     position: absolute;
     display: block;
     object-fit: cover;
-    transform: matrix(2, 0, 0, 2, 0, 0);
+    transform: scale(2);
   }
 
 
@@ -38,7 +41,7 @@
       height: ($page-height + 2 * $bleed-width) / 2;
       max-width: ($page-width + 2 * $bleed-width) / 2;
       max-height: ($page-height + 2 * $bleed-width) / 2;
-      object-position: -(($page-width + 2 * $bleed-width) / 2 - $bleed-width - $center-wrap) bottom;
+      object-position: -(($page-width + $bleed-width - $center-wrap) - $bleed-width - $center-wrap) / 2 bottom;
     }
   }
 }

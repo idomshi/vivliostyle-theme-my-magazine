@@ -6,7 +6,18 @@
   bleed: 0;
 }
 
+@page spread_01:left {
+  margin-right: $margin-right - $center-wrap;
+  @top-right {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+}
+
 @page spread_01:right {
+  margin-left: $margin-left - $center-wrap;
   @top-right {
     content: none;
   }
@@ -18,7 +29,9 @@
 .spread_01 {
   page: spread_01;
 
-  img:nth-child(2) {
-    left: -($bleed-width + $page-width + $margin-left - $center-wrap);
+  p:has(img):nth-of-type(2) {
+    img {
+      left: ($page-width - ($margin-left - $center-wrap) - $margin-right - ($page-width + 2 * $bleed-width) / 2 - $center-wrap) / 2;
+    }
   }
 }
